@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eef2f3; /* Light grey for a modern look */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem; /* Responsive font size */
+            margin-bottom: 10px;
+            color: #0056b3; /* Strong blue color */
+        }
+
+        p {
+            font-size: 1.2rem; /* Slightly larger font for readability */
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+            color: #555; /* Dark gray for contrast */
+            padding: 0 20px; /* Side padding for text */
+        }
+
+        .container {
+            padding: 40px; /* Padding around content */
+            background: white; /* Card background */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Card shadow */
+            text-align: center; /* Center text in the card */
+            max-width: 600px; /* Maximum width for the card */
+            width: 90%; /* Responsive width */
+            transition: transform 0.3s; /* Smooth hover transition */
+        }
+
+        .container:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between buttons */
+            margin-top: 20px; /* Top margin for spacing */
+        }
+
+        .link-button {
+            background-color: #007BFF; /* Blue buttons */
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 30px; /* Pill-shaped buttons */
+            font-size: 1.1rem;
+            transition: background-color 0.3s, transform 0.2s; /* Add scale effect on hover */
+            width: 100%; /* Full width buttons */
+            max-width: 250px; /* Limit button width */
+            margin: 0 auto; /* Center buttons */
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Subtle shadow */
+        }
+
+        .link-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777; /* Lighter gray for footer text */
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Smaller heading on mobile */
+            }
+
+            p {
+                font-size: 1rem; /* Smaller paragraph on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Welcome to Your Dashboard!</h1>
+
+        <p>
+            Experience seamless investment management with our app. Effortlessly view your stocks, manage your profile, and make transactions with just a few clicks.
+            Whether you're starting out or are a seasoned trader, we have the tools to empower your financial journey.
+        </p>
+
+        <div class="link-container">
+            <a href="/profile?token={{ token }}" class="link-button">Profile</a>
+            <a href="/stocks?token={{ token }}" class="link-button">Stocks</a>
+            <a href="/owned_stocks?token={{ token }}" class="link-button">Sell</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Your Company Name. All Rights Reserved.
+    </div>
+
+</body>
+
+</html>

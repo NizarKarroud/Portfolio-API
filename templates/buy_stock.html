@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Stock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 300px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .info {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Buy Stock</h1>
+        <div class="info">
+            <strong>Stock ID:</strong> {{ stock_id }}
+        </div>
+        <div class="info">
+            <strong>Entity:</strong> {{ entity }}
+        </div>
+        <form action="/confirm_purchase?token={{ token }}" method="POST">
+            <label for="number">Quantity:</label>
+            <input type="number" id="number" name="number" value="1" min="1" max="{{ number }}">
+
+            <div class="info">
+                <strong>Price:</strong> {{ price }} DH
+            </div>
+
+            <input type="hidden" name="stock_id" value="{{ stock_id }}">
+            <input type="hidden" name="entity" value="{{ entity }}">
+            <input type="hidden" name="price" value="{{ price }}">
+
+            <button type="submit" class="btn">Buy</button>
+        </form>
+    </div>
+
+</body>
+</html>
